@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url(./flower_bckg.jpg) center fixed;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.box_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 55px;
+}
+
+.container {
+  background: rgba(233, 120, 27, 0.86);
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 4px 3px 20px 6px #00000078;
+  width: 40%;
+  text-align: center;
+  padding: 15px;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-shadow: 1px 3px 0px rgb(123, 225, 197);
+}
+
+input {
+  border: 1px solid rgb(123, 225, 197);
+  border-radius: 25px;
+  padding: 10px;
+  outline: none;
+  text-align: center;
+  box-shadow: 0px 1px 7px 6px rgb(123, 225, 197, 48%);
+}
+
+ul {
+  text-align: left;
+}
+ul li {
+  list-style: none;
+  padding: 0.7rem;
+  position: relative;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+ul li:before {
+  content: "✽";
+  padding: 0.6rem;
+  font-size: 1.3rem;
+  color: rgb(123, 225, 197);
+}
+ul li:after {
+  opacity: 0;
+}
+ul li:hover:after {
+  content: "(terminé)";
+  opacity: 0;
+  font-size: 1.1rem;
+  color: rgb(123, 225, 197);
+  font-style: italic;
+  animation: pseudoClassAnim 1s forwards;
+}
+li.checked:before {
+  content: "✔";
+  padding: 10px 10px;
+  font-size: 1.1rem;
+  color: rgb(123, 225, 197);
+}
+li.checked:hover:after {
+  content: " (supprimer)";
+  font-size: 1.1rem;
+  color: rgb(123, 225, 197);
+  opacity: 0;
+}
+
+@keyframes pseudoClassAnim {
+  to {
+    opacity: 1;
+  }
+}
